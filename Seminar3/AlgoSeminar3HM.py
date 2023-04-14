@@ -1,7 +1,3 @@
-# Необходимо реализовать метод разворота связного списка
-
-from random import randint
-
 class Node:
     def __init__(self, data):
         self.data = data
@@ -66,25 +62,20 @@ class LinkedList:
             previous = current
             current = next
         self.head = previous
-        
-    def fill_linked_list(self):
-        for _ in range(5):
-            self.append(randint(1, 100))
-            
+                
     def print_list(self):
         current_node = self.head
         while current_node is not None:
             print(str(current_node.data), end=' ')
             current_node = current_node.next
         print()
-
-# Инициализируем       
+      
 a = LinkedList()
-# Заполняем нодами список
-a.fill_linked_list()
-print('Изначальный список: ')
+a.append(50)
+a.append(111)
+a.append(37)
+a.append(5)
+a.append(1)
 a.print_list()
-# Разворачиваем список
-print('Развернутый список: ')
 a.reverse()
 a.print_list()
